@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.elements {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.item {
+    padding: 10px 20px;
+    background: lightblue;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.item:hover {
+    background: darkblue;
+    color: white;
+}
+
+.display-box {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ddd;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="elements">
+            <div class="item" data-content="Content 1">Item 1</div>
+            <div class="item" data-content="Content 2">Item 2</div>
+            <div class="item" data-content="Content 3">Item 3</div>
+            <div class="item" data-content="Content 4">Item 4</div>
+        </div>
+    
+        <div class="display-box">
+            Click an item to display content here.
+        </div>
+    </div>
+
+
+
+    <script>
+        document.querySelectorAll(".item").forEach(item => {
+    item.addEventListener("click", function () {
+        let content = this.getAttribute("data-content");
+        let displayBox = document.querySelector(".display-box");
+
+        // Slide out effect
+        displayBox.style.transform = "translateX(100%)";
+        displayBox.style.opacity = "0";
+
+        // Wait for animation to complete, then change content and slide back in
+        setTimeout(() => {
+            displayBox.innerHTML = content;
+            displayBox.style.transform = "translateX(0)";
+            displayBox.style.opacity = "1";
+        }, 300);
+    });
+});
+
+    </script>
+    
+</body>
+</html>

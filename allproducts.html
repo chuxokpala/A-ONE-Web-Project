@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/allproducts.css">
+</head>
+<body>
+    <!-- Header Section -->
+<header>
+    <div id="web-logo-container">
+        <img class="web-logo" src="assets/AESL Logo_PNG x1.png" alt="a-one-web-logo">
+    </div>
+    <div id="links">
+        <nav class="navbar">
+            <button class="toggle-button js-list" aria-label="Toggle Menu"></button>
+            <ul class="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="store.html">e-Store</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>  
+</header>
+
+<!-- the cart section - below the header -->
+<header class="cart-top-section">
+    <div id="cart-container">
+      <button id="cart-button">Cart (<span id="cart-count">0</span>)</button>
+    </div>
+</header>
+
+<!-- The background section -->
+<div class="p-hero">
+    <h1>Make Life Full of Hope</h1>
+</div>
+<p><a href="home.html">Home</a> > Products</p>
+
+<!-- The main section - containing the image grid -->
+<main>
+    <div class="products" id="products-container"></div>
+</main>
+
+<!-- Modal for Product Details -->
+<div class="modal" id="details-modal">
+    <div class="modal-content">
+      <button class="close" id="close-modal">Close</button>
+      <table>
+        <tbody id="modal-details"></tbody>
+      </table>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<section class="footer">
+    <div class="footer-container">
+        <!-- Column 1: Logo & Social Media -->
+        <div class="footer-logo-socials">
+            <div class="footer-logo">
+                <img src="./assets/AESL Logo_PNG x1.png" alt="AESL Logo">
+            </div>
+            <div class="footer-socials">
+                <a href="#" aria-label="Twitter"><img src="./assets/Twitter Logo.png" alt="Twitter"></a>
+                <a href="#" aria-label="Instagram"><img src="./assets/Instagram Logo.png" alt="Instagram"></a>
+                <a href="#" aria-label="Facebook"><img src="./assets/Facebook Logo.png" alt="Facebook"></a>
+                <a href="#" aria-label="LinkedIn"><img src="./assets/LinkedIn Logo.png" alt="LinkedIn"></a>
+                <a href="#" aria-label="YouTube"><img src="./assets/YouTube Logo x1.png" alt="YouTube"></a>
+                <a href="#" aria-label="TikTok"><img src="./assets/TikTokLogo x1.png" alt="TikTok"></a>
+            </div>
+        </div>
+
+        <!-- Column 2: Our Approach to Work -->
+        <div class="footer-approach">
+            <h4>Our Approach to Work</h4>
+            <p>At AESL, we believe in innovative solutions that drive sustainable energy practices. Our team collaborates with clients to ensure that every project meets the highest standards, ensuring long-term benefits for both our clients and the environment.</p>
+        </div>
+
+        <!-- Column 3: Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="store.html">e-Store</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>info@aesolarltd.com</a></p>
+            <p>(+234) 905 308 3075; (+234) 909 533 7297</a></p>
+            <p>4 Agudama Avenue, D-Line, Port Harcourt, Rivers State, Nigeria</p>
+        </div>
+    </div>
+     <!-- Footer Bottom: Copyright, T&C, Privacy Policy -->
+     <div class="footer-bottom">
+        <p>&copy; 2024 A-ONE Electric & Solar Ltd. All Rights Reserved.</p>
+        <ul class="footer-bottom-links">
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+    </div>
+</section>
+<script src="scripts/allproducts.js"></script> 
+</body>
+</html>

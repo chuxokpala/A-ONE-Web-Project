@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header .cart {
+      cursor: pointer;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      margin: 10px 0;
+    }
+
+    .product p {
+      color: #666;
+    }
+
+    .product .price {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .product button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product button.add {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .product button.details {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 400px;
+      position: relative;
+    }
+
+    .modal-content table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .modal-content table th, .modal-content table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    .modal-content .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Product Page</h1>
+  <div class="cart">Cart: <span id="cart-count">0</span> items</div>
+</div>
+
+<div class="products" id="products-container"></div>
+
+<div class="modal" id="details-modal">
+  <div class="modal-content">
+    <button class="close" id="close-modal">Close</button>
+    <table>
+      <tbody id="modal-details"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const products = [
+  {
+    image: "./assets/images/panel.png",
+    name: "White Solar Panel",
+    id: "234askfhjebjdyuw1",
+    description: "Long-term white solar panel.",
+    rating: { stars: 4.5, count: 87 },
+    price: 1290,
+    keywords: ["white", "solar", "Panels"],
+  },
+  {
+    image: "./assets/images/panel.png",
+    name: "Black Solar Panel",
+    id: "234askfhjebjdyuw2",
+    description: "Durable black solar panel.",
+    rating: { stars: 4.7, count: 120 },
+    price: 1500,
+    keywords: ["black", "solar", "Panels"],
+  },
+];
+
+const cart = [];
+
+const productsContainer = document.getElementById("products-container");
+const cartCount = document.getElementById("cart-count");
+const modal = document.getElementById("details-modal");
+const modalDetails = document.getElementById("modal-details");
+const closeModal = document.getElementById("close-modal");
+
+function renderProducts() {
+  products.forEach((product) => {
+    const productDiv = document.createElement("div");
+    productDiv.className = "product";
+    productDiv.innerHTML = `
+      <img src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>${product.description}</p>
+      <div class="price">$${product.price}</div>
+      <button class="add">Add to Cart</button>
+      <button class="details">View Details</button>
+    `;
+
+    productDiv.querySelector(".add").addEventListener("click", () => {
+      cart.push(product);
+      cartCount.textContent = cart.length;
+    });
+
+    productDiv.querySelector(".details").addEventListener("click", () => {
+      showDetails(product);
+    });
+
+    productsContainer.appendChild(productDiv);
+  });
+}
+
+function showDetails(product) {
+  modalDetails.innerHTML = `
+    <tr><th>Name</th><td>${product.name}</td></tr>
+    <tr><th>Description</th><td>${product.description}</td></tr>
+    <tr><th>Price</th><td>$${product.price}</td></tr>
+    <tr><th>Rating</th><td>${product.rating.stars} stars (${product.rating.count} reviews)</td></tr>
+  `;
+  modal.style.display = "flex";
+}
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+renderProducts();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: middle;
+    background-color: lightgrey;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+#web-logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.web-logo {
+    width: 30%;
+    max-width: 100%;
+}
+
+#links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+}
+
+.toggle-button {
+    display: none;
+    font-size: 24px;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+.toggle-button::before {
+    content: "\2630";
+}
+
+/* responsive design for smaller device screen sizes*/
+@media(max-width: 768px) {
+    .menu{
+        display: none;
+        flex-direction: column;
+        background-color: rgb(54, 200, 208);
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        padding: 10px;
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    .menu.active {
+        display: flex;        
+    }
+
+    .toggle-button {
+        display: block;
+    }
+    header {
+        justify-content: space-between;
+    }
+}
+
+/* Style for the Hero section */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightslategrey;
+    z-index: 99;
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition:  transform 1s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.slide h1 {
+    position:  absolute;
+    bottom: 20%;
+    left: 10%;
+    font-size: 36px;
+    font-weight: weight;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-family: ;
+}
+
+.slide p {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    font-size: 18px;
+    text-shadow: 1px 1px 3px rgba(red, green, blue, alpha);
+}
