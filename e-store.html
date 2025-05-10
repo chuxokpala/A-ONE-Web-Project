@@ -3,48 +3,136 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-store</title>
-    <link rel="stylesheet" href="e-store.css">
+    <title>e-store</title>
+    <link rel="stylesheet" href="css/e-store.css">
 </head>
 <body>
-    <header></header>
-    
+
+    <!-- Header Section -->
+    <header>
+        <div id="web-logo-container">
+            <img class="web-logo" src="assets/AESL Logo_PNG x1.png" alt="a-one-web-logo">
+        </div>
+        <div id="links">
+            <nav class="navbar">
+                <button class="toggle-button js-list" aria-label="Toggle Menu"></button>
+                <ul class="menu"> 
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="store.html">e-Store</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>  
+    </header>
+
+
+     
     <div class="p-hero">
-        <h1>Make Life Full of Hope</h1>
+        <h1>Greener energy, better living</h1>
     </div>
-    <p><a href="home.html">Home</a> > Products</p>
+
+    <p><a href="home.html">Home</a> > e-Store</e-Store></p>
     
-    <section class="hero">
+    <section class="hero" id="hero-=section">
         <div class="all-div">
-            <img src="path-to-image" alt="All Products">
-            <a href="">All Products</a>
+            <!-- <img src="path-to-image" alt="All Products"> -->
+            <a href="e-store.js" id="all-products-link">All Products</a>
+            <!-- <a href="">All Products</a> -->
         </div>
         <div class="inverter-div">
-            <img src="path-to-image" alt="Inverter">
+            <img src="assets/Products - Inverter x1.png" alt="Inverter">
             <a href="">Inverter</a>
         </div>
         <div class="solar-div">
-            <img src="path-to-image" alt="Solar">
+            <img src="assets/Products - PV Panel x1.png" alt="Solar">
             <a href="">Solar</a>
         </div>
         <div class="battery-div">
-            <img src="path-to-image" alt="Battery">
+            <img src="assets/Products - Battery x1.png" alt="Battery">
             <a href="">Battery</a>
         </div>
+        <div class="lamp-div">
+            <img src="assets/Products - Street Light x1.png" alt="Lighting">
+            <a href="">Solar Lighting</a>
+        </div>
         <div class="ev-div">
-            <img src="path-to-image" alt="Electric Vehicles">
+            <img src="assets/Products - EV x1.png" alt="Electric Vehicles">
             <a href="">Electric Vehicles</a>
         </div>
-        <div class="acc-div">
-            <img src="path-to-image" alt="Accessories">
-            <a href="">Accessories</a>
+        <div class="bh-div">
+            <img src="assets/Products - Borehole Panel x1.png" alt="Solar Borehole">
+            <a href="">Solar Water</a>
         </div>
         <div class="pt-div">
-            <img src="path-to-image" alt="Power Transformers">
+            <img src="assets/Products - Transformer x1.png" alt="Power Transformers">
             <a href="">Power Transformers</a>
+        </div>        
+        <div class="acc-div">
+            <img src="assets/Products - Accesories x1.png" alt="Accessories">
+            <a href="">Accessories</a>
         </div>
     </section>
 
-    <footer></footer>
+<!-- Footer Section -->
+<section class="footer">
+    <div class="footer-container">
+        <!-- Column 1: Logo & Social Media -->
+        <div class="footer-logo-socials">
+            <div class="footer-logo">
+                <img src="./assets/AESL Logo_PNG x1.png" alt="AESL Logo">
+            </div>
+            <div class="footer-socials">
+                <a href="#" aria-label="Twitter"><img src="./assets/Twitter Logo.png" alt="Twitter"></a>
+                <a href="#" aria-label="Instagram"><img src="./assets/Instagram Logo.png" alt="Instagram"></a>
+                <a href="#" aria-label="Facebook"><img src="./assets/Facebook Logo.png" alt="Facebook"></a>
+                <a href="#" aria-label="LinkedIn"><img src="./assets/LinkedIn Logo.png" alt="LinkedIn"></a>
+                <a href="#" aria-label="YouTube"><img src="./assets/YouTube Logo x1.png" alt="YouTube"></a>
+                <a href="#" aria-label="TikTok"><img src="./assets/TikTokLogo x1.png" alt="TikTok"></a>
+            </div>
+        </div>
+
+        <!-- Column 2: Our Approach to Work -->
+        <div class="footer-approach">
+            <h4>Our Approach to Work</h4>
+            <p>At AESL, we believe in innovative solutions that drive sustainable energy practices. Our team collaborates with clients to ensure that every project meets the highest standards, ensuring long-term benefits for both our clients and the environment.</p>
+        </div>
+
+        <!-- Column 3: Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="store.html">e-Store</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>info@aesolarltd.com</a></p>
+            <p>(+234) 905 308 3075; (+234) 909 533 7297</a></p>
+            <p>4 Agudama Avenue, D-Line, Port Harcourt, Rivers State, Nigeria</p>
+        </div>
+    </div>
+
+    <!-- Footer Bottom: Copyright, T&C, Privacy Policy -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 A-ONE Electric & Solar Ltd. All Rights Reserved.</p>
+        <ul class="footer-bottom-links">
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+    </div>
+</section>
+
+     <!-- load your Javascript file here -->
+     <script src="js/e-store.js"></script>
+
 </body>
 </html>
+

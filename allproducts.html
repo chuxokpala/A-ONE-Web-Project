@@ -3,56 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/allproducts.css">
+    <title>All Products</title>
+    <link rel="stylesheet" href="css/allproducts.css">
 </head>
 <body>
     <!-- Header Section -->
-<header>
-    <div id="web-logo-container">
-        <img class="web-logo" src="assets/AESL Logo_PNG x1.png" alt="a-one-web-logo">
+    <header>
+        <div id="web-logo-container">
+            <img class="web-logo" src="assets/AESL Logo_PNG x1.png" alt="a-one-web-logo">
+        </div>
+        <div id="links">
+            <nav class="navbar">
+                <button class="toggle-button js-list" aria-label="Toggle Menu"></button>
+                <ul class="menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="store.html">e-Store</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>  
+    </header>
+
+    <!-- Cart Section -->
+    <header class="cart-top-section">
+        <div id="cart-container">
+          <button id="cart-button">Cart (<span id="cart-count">0</span>)</button>
+        </div>
+      </header>
+
+    
+   <!-- The Hero Section -->
+    <div class="p-hero">
+        <h1>Smart energy. Smarter living</h1>
     </div>
-    <div id="links">
-        <nav class="navbar">
-            <button class="toggle-button js-list" aria-label="Toggle Menu"></button>
-            <ul class="menu">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="store.html">e-Store</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>  
-</header>
 
-<!-- the cart section - below the header -->
-<header class="cart-top-section">
-    <div id="cart-container">
-      <button id="cart-button">Cart (<span id="cart-count">0</span>)</button>
-    </div>
-</header>
+    <p><a href="home.html">Home</a> > All Products</p>
 
-<!-- The background section -->
-<div class="p-hero">
-    <h1>Make Life Full of Hope</h1>
-</div>
-<p><a href="home.html">Home</a> > Products</p>
 
-<!-- The main section - containing the image grid -->
-<main>
-    <div class="products" id="products-container"></div>
-</main>
+            <!-- The main section - containing the image grid -->
+        <main>
+            <div class="products" id="products-container"></div>
+        </main>
 
-<!-- Modal for Product Details -->
-<div class="modal" id="details-modal">
-    <div class="modal-content">
-      <button class="close" id="close-modal">Close</button>
-      <table>
-        <tbody id="modal-details"></tbody>
-      </table>
-    </div>
-</div>
+        <!-- Modal for Product Details -->
+        <div class="modal" id="details-modal">
+            <div class="modal-content">
+            <button class="close" id="close-modal">Close</button>
+            <table>
+                <tbody id="modal-details"></tbody>
+            </table>
+           </div>
+        </div>
+
+
+        <!-- <div id="mediaModal" class="modal">
+            <div class="modal-content">
+              <button class="close" onclick="closeModal()">&times;</button>
+              
+              <div class="media-slider">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <div class="media-container">
+                  <div class="media-item"><img src="image1.jpg" alt="Image 1"></div>
+                  <div class="media-item"><img src="image2.jpg" alt="Image 2"></div>
+                  <div class="media-item"><video controls><source src="video.mp4" type="video/mp4"></video></div>
+                </div>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+              </div> -->
+          
+              <!-- <div class="download-section">
+                <a href="document.pdf" download class="download-btn">Download PDF</a>
+              </div>
+            </div>
+          </div> -->
+
+
+        
+
+
+      <!-- Modal for Product Details -->
+      <!-- <div id="product-detail-popup">
+        <div class="popup-content">
+          <button id="close-popup">Close</button>
+          <h2 id="popup-product-name"></h2>
+          <table id="popup-details-table"></table>
+        </div>
+      </div> -->
+      
 
 <!-- Footer Section -->
 <section class="footer">
@@ -98,15 +136,19 @@
             <p>4 Agudama Avenue, D-Line, Port Harcourt, Rivers State, Nigeria</p>
         </div>
     </div>
-     <!-- Footer Bottom: Copyright, T&C, Privacy Policy -->
-     <div class="footer-bottom">
-        <p>&copy; 2024 A-ONE Electric & Solar Ltd. All Rights Reserved.</p>
+
+    <!-- Footer Bottom: Copyright, T&C, Privacy Policy -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 A-ONE Electric & Solar Ltd. All Rights Reserved.</p>
         <ul class="footer-bottom-links">
             <li><a href="terms.html">Terms & Conditions</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
     </div>
 </section>
-<script src="scripts/allproducts.js"></script> 
+
+
+     <!-- load your Javascript file here -->
+      <script src="js/allproducts.js"></script>
 </body>
 </html>
