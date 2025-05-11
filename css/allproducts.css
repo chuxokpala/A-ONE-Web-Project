@@ -1,0 +1,673 @@
+header {
+  display: flex; /* Enables flexbox layout for the header */
+  flex-direction: row; /* Arranges child elements in a horizontal row */
+  justify-content: space-between; /* Distributes elements with space between them */
+  align-items: center; /* Vertically aligns items in the center */
+  vertical-align: middle; /* Not necessary for flexbox, as align-items: center handles vertical alignment */
+  background-color: white; /* Sets the background color of the header to white */
+  padding: 12px 30px; /* Adds 12px padding on top and bottom, 30px on left and right */
+  position: fixed; /* Fixes the header at the top of the viewport, making it stay in place while scrolling */
+  top: 0px; /* Positions the header at the very top of the page */
+  right: 0px; /* Ensures the header stretches to the right edge of the viewport */
+  left: 0px; /* Ensures the header stretches to the left edge of the viewport */
+  z-index: 100; /* Ensures the header stays on top of other elements */
+  margin-bottom: 10px; /* Adds space below the header (may not have an effect since it's fixed) */
+}
+
+#web-logo-container {
+  display: flex; /* Enables flexbox for layout */
+  align-items: center; /* Aligns child elements vertically in the center */
+}
+
+.web-logo {
+  width: 30%; /* Sets the logo's width to 30% of its parent container */
+  max-width: 100%; /* Ensures the logo does not exceed its original size */
+}
+
+#links {
+  display: flex; /* Enables flexbox for layout */
+  align-items: center; /* Aligns child elements vertically in the center */
+}
+
+.navbar {
+  display: flex; /* Enables flexbox for horizontal layout */
+  align-items: center; /* Aligns items vertically in the center */
+}
+
+.menu {
+  display: flex; /* Enables flexbox to arrange list items in a row */
+  list-style: none; /* Removes default bullet points from the list */
+  margin: 0; /* Removes default margin to maintain consistency */
+  padding: 0; /* Removes default padding to avoid unwanted spacing */
+}
+
+.menu li {
+  margin: 0 15px; /* Adds horizontal spacing between menu items */
+}
+
+.menu a {
+  text-decoration: none; /* Removes underline from links */
+  color: grey; /* Sets text color to grey */
+  white-space: nowrap; /* Prevents text from wrapping to a new line */
+}
+
+.toggle-button {
+  display: none; /* Initially hidden, typically shown in responsive views */
+  font-size: 24px; /* Sets font size for the toggle button (hamburger icon) */
+  background: none; /* Removes default button background */
+  color: white; /* Sets text (icon) color to white */
+  cursor: pointer; /* Changes cursor to pointer for better UX */
+}
+
+.toggle-button::before {
+  content: "\2630"; /* Unicode for the hamburger menu icon (☰) */
+}
+
+/* Responsive design for smaller device screen sizes */
+@media (max-width: 768px) {
+  .menu {
+      display: none; /* Hides menu by default on smaller screens */
+      flex-direction: column; /* Stacks menu items vertically */
+      background-color: rgb(54, 200, 208); /* Sets background color */
+      position: absolute; /* Positions menu absolutely for dropdown effect */
+      top: 50px; /* Positions the menu below the header */
+      right: 10px; /* Aligns the menu to the right */
+      padding: 10px; /* Adds padding for better spacing */
+      width: 200px; /* Sets width of the dropdown menu */
+      border-radius: 5px; /* Adds rounded corners for aesthetics */
+  }
+}
+
+.menu.active {
+  display: flex; /* Ensures the menu becomes visible when the 'active' class is added */
+}
+
+.toggle-button {
+  display: block; /* Shows the toggle button in responsive mode */
+}
+
+header {
+  justify-content: space-between; /* Ensures elements inside the header are evenly spaced */
+}
+
+/* Hero Section Styling */
+.p-hero { 
+  position: relative; /* Ensures the hero section is positioned relative to its parent */
+  background-image: url('../assets/e-Store\ Backdrop\ x1.jpeg'); /* Sets background image */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents background image from repeating */
+  background-size: cover; /* Ensures the image covers the entire section */
+  height: 50vh; /* Sets the hero section height to half of the viewport */
+  width: 100vw; /* Ensures it takes full viewport width */
+  display: flex; /* Enables flexbox for alignment */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  text-align: center; /* Centers text within the hero section */
+  font-size: larger; /* Increases font size */
+  color: white; /* Sets text color to white for visibility */
+  margin-top: 7%; /* Adds margin from the top */
+  margin-left: 0px; /* Moves section slightly left, but may cause horizontal overflow */
+  box-sizing: border-box; /* Ensures padding doesn’t affect the overall width */
+}
+
+.cart-top-section {
+  padding: 10px; /* Adds spacing inside the section */
+  background-color: #007BFF; /* Sets background color to a blue shade */
+  color: #fff; /* Sets text color to white */
+  text-align: right; /* Aligns text content to the right */
+  position: fixed; /* Keeps the cart section fixed at the top while scrolling */
+  top: 65px; /* Positions it 65px from the top of the page */
+}
+  
+#cart-button {
+  background-color: #fff; /* Sets button background to white */
+  border: 1px solid #007BFF; /* Adds a blue border */
+  padding: 8px 12px; /* Provides spacing inside the button */
+  border-radius: 5px; /* Rounds the corners slightly */
+  cursor: pointer; /* Changes cursor to pointer to indicate interactivity */
+  font-weight: bold; /* Makes text bold for better visibility */
+}
+
+.product-grid {
+  display: grid; /* Uses CSS Grid for layout */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates flexible columns */
+  gap: 20px; /* Adds space between grid items */
+  padding: 20px; /* Adds padding around the grid */
+}
+  
+.product-card {
+  border: 1px solid #ddd; /* Adds a light gray border */
+  border-radius: 10px; /* Rounds the corners */
+  padding: 15px; /* Adds inner spacing */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  text-align: center; /* Centers text inside the card */
+  background: #f9f9f9; /* Light gray background */
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+  
+.product-card img {
+  max-width: 100%;  /* Ensures image is fully responsive inside the card */
+  height: auto;  /* Maintains aspect ratio */
+  border-radius: 5px;  /* Rounds image corners slightly */
+  margin-bottom: 15px;
+  
+}
+
+.product-card h3 {
+  font-size: 18px;  /* Sets a readable font size for product titles */
+  margin: 10px 0;  /* Adds spacing above and below the title */
+}
+
+.product-card p {
+  font-size: 14px;  /* Sets a smaller font size for descriptions */
+  color: #555;  /* Uses a slightly darker gray for readability */
+}
+  
+.product-card button {
+  margin-top: 10px;  /* Adds space between the button and other elements */
+  padding: 8px 12px;  /* Increases clickable area for better usability */
+  border: none;  /* Removes default button border */
+  border-radius: 5px;  /* Gives rounded corners for a modern look */
+  cursor: pointer;  /* Indicates interactivity when hovered */
+}
+
+.product-card .add-to-cart {
+  background-color: #007BFF;  /* Sets a blue background (Bootstrap Primary) */
+  color: #fff;  /* White text for contrast */
+}
+
+.product-card .see-details {
+  background-color: #28a745;  /* Green background (Bootstrap Success) */
+  color: #fff;  /* White text for readability */
+}
+  
+  /* Modal Styling */
+  .products {
+    display: flex; /* Uses flexbox to arrange product items */
+    flex-wrap: wrap; /* Allows items to wrap to the next row if necessary */
+    justify-content: center; /* Centers items horizontally */
+    margin: 20px; /* Adds space around the product grid */
+}
+
+.product {
+    background: white; /* Sets background color */
+    border: 1px solid #ddd; /* Light gray border for separation */
+    border-radius: 8px; /* Rounds the corners for a softer look */
+    padding: 15px; /* Adds spacing inside the product container */
+    margin: 10px; /* Adds space between product cards */
+    width: 300px; /* Fixes the width of each product card */
+    text-align: center; /* Centers text inside the product card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a modern effect */
+}
+
+.product img {
+    width: 100%; /* Makes sure the image stretches to fill the container */
+    height: 200px; /* Fixes the height to keep a consistent layout */
+    object-fit: contain; /* Ensures the entire image is visible without distortion */
+    border-radius: 8px; /* Matches the border radius of the product card */
+}
+
+.product h3 {  /* Targets the <h3> element inside the .product class */
+  margin: 10px 0;  /* Adds 10px margin on top and bottom, 0 on left and right for spacing */
+}
+
+.product p {  /* Targets the <p> (paragraph) element inside the .product class */
+  color: #666;  /* Sets the text color to a dark gray for better readability */
+}
+
+.product .price {  /* Targets elements with the class "price" inside .product */
+  font-weight: bold;  /* Makes the price text bold to highlight its importance */
+  margin: 10px 0;  /* Adds vertical spacing around the price */
+}
+
+.product button {  /* Styles the button inside the .product class */
+  padding: 10px 15px;  /* Adds space inside the button for better usability */
+  margin: 5px;  /* Adds spacing around the button to separate it from other elements */
+  border: none;  /* Removes the default button border for a cleaner look */
+  border-radius: 5px;  /* Rounds the button corners for a modern feel */
+  cursor: pointer;  /* Changes the cursor to a pointer to indicate interactivity */
+}
+
+.product button.add {  /* Targets buttons with the class "add" inside elements with the class "product" */
+  background-color: #4CAF50;  /* Sets the background color to green (#4CAF50), indicating an "Add" action */
+  color: white;  /* Makes the button text white for better contrast and readability */
+}
+
+.product button.details {  /* Targets buttons with the class "details" inside elements with the class "product" */
+  background-color: #007BFF;  /* Sets the background color to blue (#007BFF), indicating a "Details" action */
+  color: white;  /* Makes the button text white to ensure readability on the blue background */
+}
+
+.modal {  /* Styles the modal (popup window) */
+  display: none;  /* Initially hides the modal until it's triggered */
+  position: fixed;  /* Keeps the modal in a fixed position relative to the viewport */
+  top: -10%;  /* Positions the modal at the very top of the screen */
+  left: -5%;  /* Positions the modal at the very left of the screen */
+  width: 90%;  /* Makes the modal take up the full width of the screen */
+  height: 100%;  /* Makes the modal take up the full height of the screen */
+
+  background: rgba(0, 0, 0, 0.5);  /* Adds a semi-transparent black overlay to dim the background */
+  justify-content: center;  /* Centers the modal content horizontally */
+  align-items: center;  /* Centers the modal content vertically */
+  overflow: scroll;  /* Allows scrolling if modal content exceeds the screen size */
+  padding: 200px 200px;  /* Adds extra padding inside the modal to position content */
+  z-index: 9999;  /* Ensures the modal appears above all other elements on the page */
+}
+
+  /* .related-img {
+    width: 150px;
+  }
+
+  .related-vid {
+    width: 300px;
+  } */
+
+
+  .modal-content {  /* Styles the main content inside the modal */
+    margin-top: 700px;  /* Moves the modal content down by 300px from the top */
+    background: white;  /* Sets the background color to white for contrast */
+    padding: 50px 30px;  /* Adds 50px padding at the top/bottom and 30px at the sides */
+    border-radius: 8px;  /* Rounds the corners of the modal content for a softer look */
+    /* overflow: scroll; */  /* (Commented-out) Would enable scrolling inside the modal */
+    width: 1000px;  /* Sets the modal content width to 1000px */
+    position: relative;  /* Keeps the modal content positioned relative to its parent */
+    margin-bottom: 30px;  /* Adds a 30px space below the modal content */
+    /* margin-top: -300px;
+    margin-left: -400px; */  /* (Commented-out) These would reposition the modal off-center */
+}
+
+.modal-content table {  /* Targets tables inside the modal */
+  width: 100%;  /* Ensures the table takes up the full width of the modal */
+  border-collapse: collapse;  /* Merges table borders to avoid double borders */
+  table-layout: fixed; /*Ensures even column width*/
+}
+
+.modal-content table th {  
+    border: 1px solid #ddd;  /* Adds a light grey border around table cells (th and td) */
+    padding: 8px;  /* Adds 8px padding inside each cell for better spacing */
+}
+
+  
+.modal-content table td {  
+    border: 1px solid #ddd;  /* Adds a light grey border around table cells (th and td) */
+    padding: 8px;  /* Adds 8px padding inside each cell for better spacing */
+    width: 100px;
+}
+
+.modal-content .close {  
+  position: absolute;  /* Positions the button relative to the nearest positioned ancestor */
+  top: 10px;  /* Moves the button 10px from the top of the modal */
+  right: 10px;  /* Moves the button 10px from the right */
+  background: red;  /* Sets the background color of the button to red */
+  color: white;  /* Sets the text color to white for contrast */
+  border: none;  /* Removes the default button border */
+  padding: 5px 10px;  /* Adds 5px padding on top/bottom and 10px on left/right */
+  cursor: pointer;  /* Changes the cursor to a pointer to indicate it's clickable */
+}
+
+/* Cart Styling */
+.cart-top-section {
+  display: flex; /* Enables flexbox layout for easy alignment */
+  justify-content: flex-end; /* Aligns content (cart button) to the right */
+  align-items: center; /* Vertically centers the content within the section */
+  padding: 5px 5px; /* Adds spacing around the section */
+  background-color: #007BFF; /* Sets a blue background color */
+  color: #fff; /* Sets text color to white for contrast */
+  position: fixed; /* Fixes the cart section at the top of the page */
+  top: 97px; /* Positions it 97px from the top, adjust based on header height */
+  right: 0; /* Ensures it stretches to the right edge */
+  left: 0; /* Ensures it stretches to the left edge */
+  z-index: 100; /* Ensures it stays above other content */
+}
+
+#cart-container {
+  display: flex; /* Enables flexbox for alignment */
+  justify-content: flex-end; /* Aligns the cart button to the right */
+  width: 100%; /* Makes sure the container spans the full width */
+  /* top: 100px; */ /* Commented out, but could be used for positioning adjustments */
+}
+
+#cart-button {
+  background-color: #fff; /* Sets button background to white */
+  border: 1px solid #007BFF; /* Adds a blue border matching the cart section */
+  padding: 8px 12px; /* Adds padding for comfortable clickability */
+  border-radius: 5px; /* Rounds the button corners */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  font-weight: bold; /* Makes text bold */
+  color: #007BFF; /* Sets text color to blue */
+}
+
+/* modal content styles */
+.product-details-container {
+      display: flex; /* Enables flexbox */
+    flex-direction: column; /* Arranges content in a vertical stack */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center; /* Ensures text is centered */
+    width: 100%; /* Takes full width */
+    min-height: 50vh; /* Ensures the section has enough height */
+    padding: 20px; /* Adds some spacing */
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+/* Arrange .elements and .display-box side by side */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 150px;
+  align-items: flex-start;
+  width: 100%;
+  
+}
+
+/* Left Side - Images & Video */
+.elements {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 15%;
+}
+
+.item {
+  width: 60%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Video Styling */
+video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Right Side - Display Box */
+.display-box {
+  width: 65%;
+  height: 80%;
+  background: white;
+  /* min-height: 300px;
+  max-height: 300px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  /* color: #777; */
+  border-radius: 10px;
+  text-align: center;
+  border: 2px dashed #ccc;
+  overflow: hidden;
+  object-fit: contain;
+}
+
+/* Ensure images and videos are small and fit within the box */
+.display-box img, 
+.display-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the whole image/video fits */
+  border-radius: 5px;
+  align-items: center;
+}
+
+/* Product Other Details */
+.product-other-detail {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.product-other-detail div {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* for the pdf(iframe) */
+.pdf-preview {
+  width: 100%;
+  margin-left: 30px;
+  margin-top: 10px;
+
+}
+
+/* Order Button */
+.order-now-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.order-btn {
+  background: #ff5733;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.order-btn:hover {
+  background: #e64a19;
+}
+
+.whatsapp-btn {
+  background: green;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.whatsapp-btn: hover {
+  background: #e64a19;
+}
+
+/* Slide out effect */
+.slide-out {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* Slide in effect */
+.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .elements {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+
+  .elements img,
+  .elements video {
+      width: 80px;
+      height: auto;
+      flex-shrink: 0;
+  }
+
+  .display-box {
+      width: 100%;
+      min-height: 200px;
+  }
+
+  .product-other-detail {
+      text-align: center;
+    }
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: black;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo-socials,
+.footer-approach,
+.footer-links,
+.footer-contact {
+  flex: 1; /* Allows the element to grow and take available space */
+  min-width: 200px; /* Ensures a minimum width of 200px */
+  margin-bottom: 30px; /* Adds spacing at the bottom */
+}
+
+.footer-logo img {
+  max-width: 250px; /* Ensures the image does not exceed 250px */
+  height: auto; /* Maintains aspect ratio */
+  margin-bottom: 20px; /* Adds space below the logo */
+  margin-top: 25px; /* Adds space above the logo */
+}
+
+
+.footer-socials a {
+  margin-right: 15px; /* Adds spacing between social media icons */
+}
+
+
+.footer-socials img {
+  width: 30px; /* Sets a fixed width for social media icons */
+  height: 30px; /* Sets a fixed height for social media icons */
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.footer-socials img:hover {
+  transform: scale(1.1); /* Slightly enlarges the icon when hovered */
+}
+
+.footer-approach h4,
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 18px; /* Sets the font size for section headings */
+    margin-bottom: 10px; /* Adds space below the heading */
+}
+
+.footer-approach p,
+.footer-contact p {
+    font-size: 16px; /* Ensures readability */
+    line-height: 1.5; /* Increases line spacing for better readability */
+}
+
+.footer-links ul {
+  list-style: none; /* Removes default bullet points */
+  padding: 0; /* Removes extra spacing */
+}
+
+.footer-links li {
+  margin-bottom: 10px; /* Adds space between list items */
+}
+
+.footer-links a {
+  text-decoration: none; /* Removes the default underline from links */
+  color: #fff; /* Sets link color to white */
+  font-size: 16px; /* Ensures uniform font size for links */
+}
+
+.footer-links a:hover {
+  color: #00bcd4; /* Changes color to light blue when hovered */
+}
+
+.footer-bottom {
+  background-color: #222; /* Dark background for the bottom section */
+  padding: 20px; /* Adds spacing for better appearance */
+  text-align: center; /* Centers text content */
+}
+
+.footer-bottom p {
+  font-size: 14px; /* Sets font size to 14px for readability */
+  color: #ccc; /* Light gray color for subtle contrast */
+  margin-bottom: 10px; /* Adds spacing below the paragraph */
+}
+
+.footer-bottom-links {
+  list-style: none; /* Removes bullet points from the list */
+  padding: 0; /* Removes default padding */
+  display: flex; /* Enables flexbox for horizontal alignment */
+  justify-content: center; /* Centers links horizontally */
+}
+
+.footer-bottom-links li {
+  margin: 0 15px; /* Adds spacing between list items */
+}
+
+.footer-bottom-links a {
+  text-decoration: none; /* Removes underline */
+  color: #fff; /* Sets link color to white */
+  font-size: 14px; /* Keeps text readable and compact */
+}
+
+.footer-bottom-links a:hover {
+  color: #00bcd4; /* Changes link color to a light blue shade when hovered */
+}
+
+.footer-bottom-links {
+  padding-left: 10px; /* Adds a 10px left padding to shift content slightly */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo-socials,
+    .footer-approach,
+    .footer-links,
+    .footer-contact {
+        text-align: center;
+    }
+
+    .footer-socials a {
+        margin-right: 10px;
+    }
+}
